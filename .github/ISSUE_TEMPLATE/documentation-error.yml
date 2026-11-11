@@ -1,0 +1,37 @@
+name: 文档错误或改进
+description: 报告现有文档中的错误、过期内容或可改进之处
+title: "[文档反馈] "
+labels:
+  - documentation
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 文档链接或路径
+      description: 提供出错文档的链接或仓库内路径。
+      placeholder: 待填写
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: 问题描述
+      description: 描述问题，并在可能时引用相关段落。
+      placeholder: 待填写
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: 建议修正
+      description: 提供建议的修正方式或需要核实的信息。
+      placeholder: 可留空
+    validations:
+      required: false
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: 信息安全
+      options:
+        - label: 报告中不包含凭据、个人信息或未经授权的内部资料。
+          required: true
