@@ -20,6 +20,10 @@ hide:
       <p class="handbook-hero__description">
         面向机器人与工程科技的知识入口。浏览经核实并获准公开的教程、项目资料、设备说明与技术经验。
       </p>
+      <p class="handbook-hero__caption">
+        <span>FIELD NOTES / 01</span>
+        <span>从学习、设计到制造与复盘，记录可验证、可复用的工程经验。</span>
+      </p>
     </div>
 
     <aside class="handbook-start" aria-labelledby="handbook-start-title">
