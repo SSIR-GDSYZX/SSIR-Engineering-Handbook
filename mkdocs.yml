@@ -39,6 +39,7 @@ plugins:
       lang: zh
 
 markdown_extensions:
+  - admonition
   - tables
   - fenced_code
   - pymdownx.superfences:
