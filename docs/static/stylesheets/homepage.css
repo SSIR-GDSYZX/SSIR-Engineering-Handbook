@@ -62,13 +62,13 @@
 
 .handbook-hero {
   position: relative;
-  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
   align-items: stretch;
   gap: clamp(1.5rem, 4vw, 4rem);
   padding: clamp(1rem, 2vw, 1.75rem) 0 clamp(3rem, 6vw, 5rem);
   border-top: 1px solid var(--handbook-line);
+  overflow: visible;
 }
 
 .handbook-hero::before {
@@ -95,6 +95,7 @@
     rgb(22 25 31 / 96%) 52%,
     rgb(22 25 31 / 82%) 64%,
     rgb(22 25 31 / 30%) 82%,
+    rgb(22 25 31 / 15%) 90%,
     rgb(22 25 31 / 0%) 100%
   );
   content: "";
@@ -309,6 +310,7 @@
 
 .handbook-index {
   padding: 0 0 clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(1rem, 2vw, 2rem);
 }
 
 .handbook-section-heading {
