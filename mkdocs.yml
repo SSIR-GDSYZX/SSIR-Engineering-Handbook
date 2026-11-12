@@ -39,6 +39,10 @@ theme:
 plugins:
   - search:
       lang: zh
+  - awesome-pages:
+      filename: _nav.md
+      collapse_single_pages: false
+      strict: false
 
 markdown_extensions:
   - admonition
@@ -74,13 +78,26 @@ nav:
       - 已归档: projects/archive/index.md
   - 工坊:
       - workshop/index.md
-      - 3D 打印: workshop/3d-printing/index.md
+      - 3D 打印:
+          - workshop/3d-printing/index.md
+          - Bambu Lab A1 设备概览: workshop/3d-printing/bambu-lab-a1.md
+          - 日常操作: workshop/3d-printing/daily-operation.md
+          - 维护指南: workshop/3d-printing/maintenance.md
+          - 故障排查: workshop/3d-printing/troubleshooting.md
       - 激光切割: workshop/laser-cutting/index.md
       - 制造: workshop/manufacturing/index.md
   - 资产:
       - assets/index.md
       - 设备: assets/equipment/index.md
-      - 耗材: assets/consumables/index.md
+      - 耗材:
+          - assets/consumables/index.md
+          - 3D 打印材料:
+              - assets/consumables/3d-printing/index.md
+              - PLA: assets/consumables/3d-printing/pla.md
+              - PETG: assets/consumables/3d-printing/petg.md
+              - PETG HF: assets/consumables/3d-printing/petg-hf.md
+              - 耗材储存与烘干: assets/consumables/3d-printing/storage-and-drying.md
+              - 打印配置文件下载: assets/consumables/3d-printing/profiles/index.md
       - 模板: assets/templates/index.md
   - 技术:
       - technology/index.md
