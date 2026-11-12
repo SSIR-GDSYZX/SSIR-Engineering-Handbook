@@ -1,8 +1,8 @@
 :root {
   --handbook-paper: #ffffff;
   --handbook-ink: #191919;
-  --handbook-headline: #f3f4f6;
-  --handbook-hero-muted: #d1d5db;
+  --handbook-headline: #202329;
+  --handbook-hero-muted: #4a4a4a;
   --handbook-hero-base: #16191f;
   --handbook-muted: #626262;
   --handbook-line: #d9d9d9;
@@ -16,6 +16,8 @@
 [data-md-color-scheme="slate"] {
   --handbook-paper: #141414;
   --handbook-ink: #f2f2f2;
+  --handbook-headline: #F3F4F6;
+  --handbook-hero-muted: #a0a0a0;
   --handbook-muted: #b3b3b3;
   --handbook-line: #484848;
   --handbook-surface: #1f1f1f;
