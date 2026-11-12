@@ -4,36 +4,159 @@ category: General
 status: draft
 owner: SSIR
 last_reviewed: YYYY-MM-DD
+hide:
+  - toc
 ---
 
-# SSIR Engineering Handbook
+<div class="handbook-home">
+  <header class="handbook-hero">
+    <div class="handbook-hero__copy">
+      <p class="handbook-eyebrow">
+        <span>SSIR / ENGINEERING HANDBOOK</span>
+        <span>KNOWLEDGE PORTAL</span>
+      </p>
+      <h1 id="ssir-engineering-handbook">工程技术知识<br>从这里开始</h1>
+      <p class="handbook-hero__subtitle">Robotics and Engineering Knowledge Base</p>
+      <p class="handbook-hero__description">
+        面向机器人与工程科技的知识入口。浏览经核实并获准公开的教程、项目资料、设备说明与技术经验。
+      </p>
+    </div>
 
-Robotics and Engineering Knowledge Base
+    <aside class="handbook-start" aria-labelledby="handbook-start-title">
+      <div class="handbook-start__eyebrow">
+        <span>START HERE</span>
+        <span>GUIDE / 00</span>
+      </div>
+      <h2 id="handbook-start-title">新成员<br>从这里开始</h2>
+      <p>首次访问？先了解如何查找资料，以及怎样安全地提出文档修改。</p>
+      <nav class="handbook-start__links" aria-label="新成员指南">
+        <a class="handbook-start__link handbook-start__link--primary" href="organization/website-guide/">
+          <span class="handbook-start__number">01</span>
+          <span>网站使用指南</span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="handbook-start__link" href="organization/document-editing-guide/">
+          <span class="handbook-start__number">02</span>
+          <span>文档编辑与贡献</span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </nav>
+      <p class="handbook-start__note">无需安装 Git 或 VS Code；使用浏览器即可开始。</p>
+    </aside>
+  </header>
 
-本手册是工程技术知识的入口。内容以可移植的 Markdown 编写；具体组织资料由授权维护者核实后逐步补充。
+  <section class="handbook-index" aria-labelledby="handbook-index-title">
+    <div class="handbook-section-heading">
+      <p class="handbook-eyebrow"><span>01 / KNOWLEDGE INDEX</span><span>8 AREAS</span></p>
+      <div class="handbook-section-heading__row">
+        <h2 id="handbook-index-title">八大板块</h2>
+        <p>从学习资料到工程实践，按主题进入知识库。</p>
+      </div>
+    </div>
 
-!!! info "新成员请先阅读｜网站使用与文档贡献指南"
+    <ol class="handbook-sections">
+      <li>
+        <a class="handbook-section-link" href="academy/">
+          <span class="handbook-section-link__number">01</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">ACADEMY</span>
+            <span class="handbook-section-link__title">学院</span>
+            <span class="handbook-section-link__description">学习资料与教程</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="projects/">
+          <span class="handbook-section-link__number">02</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">PROJECTS</span>
+            <span class="handbook-section-link__title">项目</span>
+            <span class="handbook-section-link__description">项目文档入口</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="workshop/">
+          <span class="handbook-section-link__number">03</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">WORKSHOP</span>
+            <span class="handbook-section-link__title">工坊</span>
+            <span class="handbook-section-link__description">制造与加工知识</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="assets/">
+          <span class="handbook-section-link__number">04</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">ASSETS</span>
+            <span class="handbook-section-link__title">资产</span>
+            <span class="handbook-section-link__description">设备、耗材与模板</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="technology/">
+          <span class="handbook-section-link__number">05</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">TECHNOLOGY</span>
+            <span class="handbook-section-link__title">技术</span>
+            <span class="handbook-section-link__description">机器人与工程技术主题</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="research/">
+          <span class="handbook-section-link__number">06</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">RESEARCH</span>
+            <span class="handbook-section-link__title">研究</span>
+            <span class="handbook-section-link__description">研究记录与资料</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="safety/">
+          <span class="handbook-section-link__number">07</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">SAFETY</span>
+            <span class="handbook-section-link__title">安全</span>
+            <span class="handbook-section-link__description">安全文档入口</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="handbook-section-link" href="organization/">
+          <span class="handbook-section-link__number">08</span>
+          <span class="handbook-section-link__copy">
+            <span class="handbook-section-link__label">ORGANIZATION</span>
+            <span class="handbook-section-link__title">组织</span>
+            <span class="handbook-section-link__description">协作与文档规范</span>
+          </span>
+          <span class="handbook-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ol>
+  </section>
 
-    首次访问本平台？建议先阅读网站使用指南，了解如何查找资料、编辑文档及提交修改申请（Pull Request）。
-
-    **无需安装 Git 或 VS Code，使用浏览器即可参与文档贡献。**
-
-    - [网站使用指南](organization/website-guide.md)
-    - [文档编辑与贡献指南](organization/document-editing-guide.md)
-
-## 八大板块
-
-| 板块 | 内容入口 |
-| --- | --- |
-| 学院 | [学习资料与教程](academy/index.md) |
-| 项目 | [项目文档入口](projects/index.md) |
-| 工坊 | [制造与加工知识](workshop/index.md) |
-| 资产 | [设备、耗材与模板](assets/index.md) |
-| 技术 | [机器人与工程技术主题](technology/index.md) |
-| 研究 | [研究记录与资料](research/index.md) |
-| 安全 | [安全文档入口](safety/index.md) |
-| 组织 | [协作与文档规范](organization/index.md) |
-
-## 文档状态与贡献
-
-文档使用 `draft`（草稿）、`review`（审阅中）或 `approved`（已批准）标注状态；草稿不应被视作已批准的操作规程。准备新增或修改内容时，请参考[文档贡献指南](organization/contribution-guide.md)、[文档规范](organization/document-standards.md)和[标准模板](templates/index.md)。关于手册用途，请阅读[关于本手册](about/index.md)。
+  <footer class="handbook-footer">
+    <div>
+      <p class="handbook-eyebrow"><span>02 / DOCUMENT STATUS</span></p>
+      <h2>先核实，再发布</h2>
+      <p>文档以 <code>draft</code>、<code>review</code> 或 <code>approved</code> 标注状态。草稿不应被视作已批准的操作规程。</p>
+    </div>
+    <div class="handbook-footer__links" aria-label="贡献与维护">
+      <a href="organization/contribution-guide/">文档贡献指南 <span aria-hidden="true">→</span></a>
+      <a href="organization/document-standards/">文档规范 <span aria-hidden="true">→</span></a>
+      <a href="templates/">标准模板 <span aria-hidden="true">→</span></a>
+      <a href="about/">关于本手册 <span aria-hidden="true">→</span></a>
+    </div>
+  </footer>
+</div>
