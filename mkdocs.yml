@@ -2,8 +2,7 @@ site_name: SSIR Engineering Handbook
 site_description: Robotics and Engineering Knowledge Base
 repo_url: https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook
 edit_uri: edit/main/docs/
-# Set site_url only after the official Pages URL is confirmed.
-# site_url: https://<organization>.github.io/<repository>/
+site_url: https://ssir-gdsyzx.github.io/SSIR-Engineering-Handbook/
 docs_dir: docs
 site_dir: site
 exclude_docs: "!/templates/"

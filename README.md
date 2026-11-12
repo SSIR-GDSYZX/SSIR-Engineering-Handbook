@@ -31,8 +31,8 @@ mkdocs build --strict
 - 新贡献者请先阅读[贡献指南](docs/organization/contribution-guide.md)和[文档规范](docs/organization/document-standards.md)。
 - 新文档应从[标准模板](docs/templates/index.md)开始。
 - 发布前确认内容已获公开授权。不要提交内部资产明细、成员个人信息、采购记录、凭据或其他敏感资料。
-- GitHub 仓库地址已确认为 `https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook`。正式 Pages URL、许可证及公开范围仍待 SSIR 管理人员确认；工作流不会自动启用 GitHub Pages。
-- MkDocs 中的 GitHub 编辑入口已指向上述仓库的 `main/docs/`；正式 Pages URL 尚未设置。
+- GitHub 仓库地址为 `https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook`，预期 Pages 地址为 `https://ssir-gdsyzx.github.io/SSIR-Engineering-Handbook/`。工作流不会自动启用 GitHub Pages；上线前仍需确认公开范围与许可证。
+- MkDocs 中的 GitHub 编辑入口指向上述仓库的 `main/docs/`。配置站点地址不代表 Pages 已启用或已发布。
 
 ## 远端初始 README 说明
 
