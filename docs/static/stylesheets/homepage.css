@@ -1,6 +1,7 @@
 :root {
   --handbook-paper: #ffffff;
   --handbook-ink: #191919;
+  --handbook-headline: #315d78;
   --handbook-muted: #626262;
   --handbook-line: #d9d9d9;
   --handbook-surface: #f2f2f2;
@@ -12,6 +13,7 @@
 [data-md-color-scheme="slate"] {
   --handbook-paper: #141414;
   --handbook-ink: #f2f2f2;
+  --handbook-headline: #9acbe3;
   --handbook-muted: #b3b3b3;
   --handbook-line: #484848;
   --handbook-surface: #1f1f1f;
@@ -52,12 +54,34 @@
 }
 
 .handbook-hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
   align-items: stretch;
   gap: clamp(1.5rem, 4vw, 4rem);
   padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem);
   border-top: 1px solid var(--handbook-line);
+}
+
+.handbook-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("../images/handbook-building-sketch.png");
+  background-repeat: no-repeat;
+  background-position: right 8% center;
+  background-size: min(72%, 56rem) auto;
+  content: "";
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+[data-md-color-scheme="slate"] .handbook-hero::before {
+  filter: invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.14;
 }
 
 .handbook-hero__copy {
@@ -87,7 +111,7 @@
 
 .handbook-home .handbook-hero h1 {
   margin: 0 0 1rem;
-  color: var(--handbook-ink);
+  color: var(--handbook-headline);
   font-size: clamp(2.25rem, 3vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.045em;
@@ -105,6 +129,26 @@
 .handbook-hero__description {
   max-width: 54ch;
   margin-bottom: 0;
+}
+
+.handbook-hero__caption {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 38rem;
+  margin: 1.5rem 0 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--handbook-signal);
+  color: var(--handbook-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.handbook-hero__caption span:first-child {
+  color: var(--handbook-ink);
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .handbook-start {
@@ -400,6 +444,16 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
     padding-top: 1.5rem;
+  }
+
+  .handbook-hero::before {
+    background-position: right top 3rem;
+    background-size: 100% auto;
+    opacity: 0.12;
+  }
+
+  [data-md-color-scheme="slate"] .handbook-hero::before {
+    opacity: 0.09;
   }
 
   .handbook-home .handbook-hero h1 {
