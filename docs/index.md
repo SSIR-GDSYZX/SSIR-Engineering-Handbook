@@ -28,9 +28,10 @@ Robotics and Engineering Knowledge Base
 ## 新人快速入门
 
 1. 阅读[关于本手册](about/index.md)，了解内容边界和使用方式。
-2. 阅读[贡献指南](organization/contribution-guide.md)和[文档规范](organization/document-standards.md)。
-3. 按文档类型选择[标准模板](templates/index.md)。
-4. 对未经确认的组织信息、设备数据或安全要求保持留白，并联系相应负责人核实。
+2. 先看[网站使用指南](organization/website-guide.md)，了解板块、搜索和反馈入口。
+3. 按[文档编辑与贡献指南](organization/document-editing-guide.md)通过 GitHub 网页或 VS Code 提交修改。
+4. 参考[文档贡献指南](organization/contribution-guide.md)和[文档规范](organization/document-standards.md)。
+5. 按文档类型选择[标准模板](templates/index.md)。对未经确认的组织信息、设备数据或安全要求保持留白，并联系相应负责人核实。
 
 ## 内容状态
 

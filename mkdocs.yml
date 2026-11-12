@@ -91,6 +91,8 @@ nav:
   - 安全: safety/index.md
   - 组织:
       - organization/index.md
+      - 网站使用指南: organization/website-guide.md
+      - 文档编辑与贡献: organization/document-editing-guide.md
       - 贡献指南: organization/contribution-guide.md
       - 文档规范: organization/document-standards.md
       - 模板:
