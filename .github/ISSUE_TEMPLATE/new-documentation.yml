@@ -1,0 +1,52 @@
+name: 新增文档
+description: 提出新增一篇工程技术文档
+title: "[文档新增] "
+labels:
+  - documentation
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 文档标题
+      description: 请提供简明、具体的标题。
+      placeholder: 待填写
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 所属板块
+      options:
+        - 学院
+        - 项目
+        - 工坊
+        - 资产
+        - 技术
+        - 研究
+        - 安全
+        - 组织
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 文档目的与读者
+      description: 说明希望解决的问题及预期读者。
+      placeholder: 待填写
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 内容范围与资料来源
+      description: 列出拟覆盖内容和已确认的资料来源；不要粘贴敏感资料。
+      placeholder: 待填写
+    validations:
+      required: true
+  - type: checkboxes
+    id: publication
+    attributes:
+      label: 公开范围确认
+      options:
+        - label: 我已确认提案不包含个人信息、凭据或未经授权的内部资料。
+          required: true

@@ -1,0 +1,103 @@
+site_name: SSIR Engineering Handbook
+site_description: Robotics and Engineering Knowledge Base
+repo_url: https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook
+edit_uri: edit/main/docs/
+# Set site_url only after the official Pages URL is confirmed.
+# site_url: https://<organization>.github.io/<repository>/
+docs_dir: docs
+site_dir: site
+exclude_docs: "!/templates/"
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search:
+      lang: zh
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - static/javascripts/mathjax-config.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
+  - static/javascripts/mermaid-init.js
+
+nav:
+  - 首页: index.md
+  - 关于: about/index.md
+  - 学院:
+      - academy/index.md
+      - 开发环境: academy/development-environment/index.md
+      - 机械设计: academy/mechanical-design/index.md
+      - 电子技术: academy/electronics/index.md
+      - 制造工艺: academy/manufacturing/index.md
+      - 机器人: academy/robotics/index.md
+  - 项目:
+      - projects/index.md
+      - 进行中: projects/active/index.md
+      - 已归档: projects/archive/index.md
+  - 工坊:
+      - workshop/index.md
+      - 3D 打印: workshop/3d-printing/index.md
+      - 激光切割: workshop/laser-cutting/index.md
+      - 制造: workshop/manufacturing/index.md
+  - 资产:
+      - assets/index.md
+      - 设备: assets/equipment/index.md
+      - 耗材: assets/consumables/index.md
+      - 模板: assets/templates/index.md
+  - 技术:
+      - technology/index.md
+      - 机器人: technology/robotics/index.md
+      - 机械: technology/mechanical/index.md
+      - 电子: technology/electronics/index.md
+      - 嵌入式: technology/embedded/index.md
+      - 控制: technology/control/index.md
+      - 人工智能: technology/artificial-intelligence/index.md
+  - 研究: research/index.md
+  - 安全: safety/index.md
+  - 组织:
+      - organization/index.md
+      - 贡献指南: organization/contribution-guide.md
+      - 文档规范: organization/document-standards.md
+      - 模板:
+          - templates/index.md
+          - 软件安装教程: templates/tutorial-template.md
+          - 项目对齐表: templates/project-template.md
+          - 设备档案: templates/equipment-template.md
+          - 设备维护记录: templates/maintenance-template.md
+          - 技术实验报告: templates/experiment-template.md
