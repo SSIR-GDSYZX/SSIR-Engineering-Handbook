@@ -12,6 +12,8 @@ Robotics and Engineering Knowledge Base
 
 本手册是工程技术知识的入口。内容以可移植的 Markdown 编写；具体组织资料由授权维护者核实后逐步补充。
 
+首次访问或准备贡献文档？从[网站使用指南](organization/website-guide.md)开始。
+
 ## 八大板块
 
 | 板块 | 内容入口 |

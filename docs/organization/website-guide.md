@@ -8,7 +8,24 @@ last_reviewed: YYYY-MM-DD
 
 # 网站使用指南
 
-SSIR Engineering Handbook 用于查找和维护可公开分享的机器人与工程技术知识。页面内容以 Markdown 编写；没有 Git 使用经验也可以先浏览、搜索或反馈错误。
+SSIR Engineering Handbook 是 SSIR 的工程技术知识库，用于整理和分享可公开的工程软件教程、机器人与工程项目资料、设备及工具说明、研究与实验经验，以及其他经核实可公开的技术知识。
+
+网站地址：[SSIR Engineering Handbook](https://ssir-gdsyzx.github.io/SSIR-Engineering-Handbook/)。
+
+所有人都可以阅读公开文档，也可以提出修改建议。正式文档通过 Pull Request（PR）审核后发布，避免未审核的修改直接进入正式内容。即使没有 Git 或 GitHub 使用经验，也可以先浏览、搜索、反馈错误，或按[网页编辑指南](document-editing-guide.md)提出修改。
+
+## 两分钟快速入门
+
+只想修改文档中的一处内容时：
+
+1. 打开网站，通过导航或搜索找到目标页面。
+2. 点击页面上的编辑图标，打开对应的 Markdown 源文件。
+3. 登录 GitHub 并修改内容；不要直接提交到 `main`。
+4. 按 GitHub 提示，将修改保存到新分支；没有仓库写入权限时，使用 Fork。
+5. 创建目标为 `main` 的 PR，并查看自动构建结果。
+6. 等待至少一项有效审批并由维护者合并；合并后网站会自动部署。
+
+**提交修改申请不等于立即发布。** 逐步操作请见[文档编辑与贡献指南](document-editing-guide.md)。
 
 ## 网站板块
 
@@ -42,4 +59,4 @@ SSIR Engineering Handbook 用于查找和维护可公开分享的机器人与工
 
 ## 参与贡献
 
-可在文档页面点击“编辑此页”提出修改，也可通过 VS Code 编辑后提交 Pull Request。首次贡献请阅读[文档编辑与贡献指南](document-editing-guide.md)和[文档规范](document-standards.md)。内容经管理员或指定维护者审核、合并后，才会进入正式网站。
+可在文档页面点击“编辑此页”提出修改，也可通过 VS Code 编辑后提交 Pull Request。首次贡献请阅读[文档编辑与贡献指南](document-editing-guide.md)、[文档贡献指南](contribution-guide.md)和[文档规范](document-standards.md)。不要提交个人信息、内部资产资料、采购记录、凭据或其他未经授权公开的内容。
