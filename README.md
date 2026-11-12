@@ -4,6 +4,15 @@ Robotics and Engineering Knowledge Base
 
 这是 SSIR 工程技术文档平台的基础框架。文档以 Markdown 为主，网站由 MkDocs 和 Material for MkDocs 构建。项目尚处于基础设施搭建阶段，组织信息、设备资料和项目内容均由授权维护者后续确认并补充。
 
+## 快速开始
+
+如果你希望浏览面向公共的文档站，请跳转 [SSIR技术手册](https://ssir-gdsyzx.github.io/SSIR-Engineering-Handbook/)。
+
+## 关于修改
+
+请注意：即使在拉取请求通过后，文档站仍需要1-5分钟进行重新部署，也就是说，您可能无法立刻看到修改效果。
+我们强烈建议在提交任何修改前，先在本地进行预览。
+
 ## 本地预览
 
 需要 Python 3.12 或更新版本，以及 [uv](https://docs.astral.sh/uv/)。
