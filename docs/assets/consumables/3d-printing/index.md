@@ -30,5 +30,5 @@ last_reviewed: YYYY-MM-DD
 
 ## 交叉链接
 
-- [Bambu Lab A1 设备操作与维护](../../../../workshop/3d-printing/index.md)
+- [Bambu Lab A1 设备操作与维护](../../../workshop/3d-printing/index.md)
 - [耗材知识库入口](../index.md)
