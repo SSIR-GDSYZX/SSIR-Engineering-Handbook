@@ -10,7 +10,55 @@
 4. 在独立 Python 虚拟环境中安装 `requirements.txt` 并运行 `mkdocs build --strict`。
 5. 提交 Pull Request，说明变更目的、影响范围及验证结果；需要组织或技术负责人确认的内容应明确标注。
 
-## 内容原则
+## 3D 打印耗材知识库（图书馆式分层）
+
+`docs/assets/consumables/3d-printing/` 目录存放 3D 打印耗材工程知识。新增页面的方式：
+
+1. 在目录中新建 Markdown 文件，填写 Front Matter（`title`, `category`, `status`, `owner`, `last_reviewed`）。
+2. 若页面为节（Section）或模块（如 `profiles/`），在目录中保留 `_nav.md`。
+3. 提交 PR 后，CI 会执行 `mkdocs build --strict` 并校验导航与内部链接。
+
+### 文件结构
+
+```text
+docs/assets/consumables/3d-printing/
+├── _nav.md          # 当前目录导航控制（awesome-pages 插件使用）
+├── index.md         # 父页（汇总页）
+├── pla.md
+├── petg.md
+├── petg-hf.md
+├── storage-and-drying.md
+└── profiles/
+    ├── _nav.md      # 子目录导航控制
+    └── index.md     # 子页（汇总页）
+```
+
+### 交叉链接规范
+
+- 网站内的相对链接使用本仓库约定：从当前文件到目标文件的相对路径。
+- 页内交叉链接请使用一致的相对路径，不要使用绝对路径或硬编码链接。
+
+## 贡献者的本地验证
+
+普通成员贡献内容时，按以下步骤验证：
+
+1. 配置 Python 虚拟环境并安装依赖：`python -m venv .venv && .venv\Scripts\python.exe -m pip install -r requirements.txt`
+2. 运行构建校验：`mkdocs build --strict`
+3. 如输出任何 `error` 或 `Error` 词条，按错误信息定位问题后修复。
+4. 若新增页面未出现在侧边导航，检查：
+   - 是否在 `mkdocs.yml` 的 `nav` 中正确列出；
+   - 是否与其他板块的 `index.md` 冲突；
+   - 页面是否在 `exclude_docs` 中被排除。
+
+## 页面元数据约定
+
+| 字段 | 必填 | 说明 |
+|------|------|------|
+| `title` | 是 | 页面标题，中文显示 |
+| `category` | 是 | 板块分类，如 `Assets`、`Workshop` |
+| `status` | 否 | 草稿状态：`draft`、`review`、`approved` |
+| `owner` | 是 | 负责人 |
+| `last_reviewed` | 是 | 最近审核日期，格式 `YYYY-MM-DD` |
 
 - 使用清晰、可复现且与具体网站主题解耦的 Markdown。
 - 不猜测组织信息、人员、设备型号、项目数据或安全规范。
