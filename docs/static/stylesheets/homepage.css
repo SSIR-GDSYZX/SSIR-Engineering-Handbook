@@ -1,7 +1,9 @@
 :root {
   --handbook-paper: #ffffff;
   --handbook-ink: #191919;
-  --handbook-headline: #315d78;
+  --handbook-headline: #f3f4f6;
+  --handbook-hero-muted: #d1d5db;
+  --handbook-hero-base: #16191f;
   --handbook-muted: #626262;
   --handbook-line: #d9d9d9;
   --handbook-surface: #f2f2f2;
@@ -13,7 +15,6 @@
 [data-md-color-scheme="slate"] {
   --handbook-paper: #141414;
   --handbook-ink: #f2f2f2;
-  --handbook-headline: #9acbe3;
   --handbook-muted: #b3b3b3;
   --handbook-line: #484848;
   --handbook-surface: #1f1f1f;
@@ -24,7 +25,7 @@
 .handbook-home {
   width: 100%;
   max-width: 70rem;
-  margin: clamp(1.5rem, 4vw, 3.5rem) auto 5rem;
+  margin: clamp(0.75rem, 1.5vw, 1.5rem) auto 5rem;
   color: var(--handbook-ink);
   font-size: 1rem;
   line-height: 1.65;
@@ -60,33 +61,58 @@
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
   align-items: stretch;
   gap: clamp(1.5rem, 4vw, 4rem);
-  padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem);
+  padding: clamp(1rem, 2vw, 1.75rem) 0 clamp(3rem, 6vw, 5rem);
   border-top: 1px solid var(--handbook-line);
 }
 
 .handbook-hero::before {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   background-image: url("../images/handbook-building-sketch.png");
   background-repeat: no-repeat;
   background-position: right 8% center;
-  background-size: min(72%, 56rem) auto;
+  background-size: min(58%, 42rem) auto;
   content: "";
-  opacity: 0.2;
-  mix-blend-mode: multiply;
+  opacity: 0.62;
+  pointer-events: none;
+}
+
+.handbook-hero::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--handbook-hero-base) 0%,
+    var(--handbook-hero-base) 40%,
+    rgb(22 25 31 / 96%) 52%,
+    rgb(22 25 31 / 82%) 64%,
+    rgb(22 25 31 / 30%) 82%,
+    rgb(22 25 31 / 0%) 100%
+  );
+  content: "";
   pointer-events: none;
 }
 
 [data-md-color-scheme="slate"] .handbook-hero::before {
   filter: invert(1);
-  mix-blend-mode: screen;
-  opacity: 0.14;
+  opacity: 0.58;
 }
 
 .handbook-hero__copy {
+  position: relative;
+  z-index: 2;
   min-width: 0;
   align-self: center;
+  color: var(--handbook-headline);
+}
+
+.handbook-hero__copy .handbook-eyebrow,
+.handbook-hero__copy .handbook-hero__subtitle,
+.handbook-hero__copy .handbook-hero__description,
+.handbook-hero__copy .handbook-hero__caption {
+  color: var(--handbook-hero-muted);
 }
 
 .handbook-eyebrow,
@@ -110,10 +136,12 @@
 }
 
 .handbook-home .handbook-hero h1 {
+  position: relative;
+  z-index: 2;
   margin: 0 0 1rem;
   color: var(--handbook-headline);
   font-size: clamp(2.25rem, 3vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.16;
 }
@@ -144,7 +172,7 @@
 }
 
 .handbook-hero__caption span:first-child {
-  color: var(--handbook-ink);
+  color: var(--handbook-headline);
   font-family: var(--md-code-font-family, monospace);
   font-size: 0.6875rem;
   font-weight: 600;
@@ -153,6 +181,7 @@
 
 .handbook-start {
   position: relative;
+  z-index: 2;
   isolation: isolate;
   overflow: hidden;
   min-width: 0;
@@ -435,25 +464,43 @@
 }
 
 @media (max-width: 767px) {
+  .md-main__inner:has(.handbook-home) {
+    margin-top: 0;
+  }
+
+  .md-content__inner:has(.handbook-home) {
+    padding-top: 0;
+  }
+
   .handbook-home {
-    margin-top: 1.25rem;
+    margin-top: 0.75rem;
     margin-bottom: 3rem;
   }
 
   .handbook-hero {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 0.75rem;
   }
 
   .handbook-hero::before {
     background-position: right top 3rem;
-    background-size: 100% auto;
-    opacity: 0.12;
+    background-size: min(100%, 28rem) auto;
+    opacity: 0.3;
+  }
+
+  .handbook-hero::after {
+    background: linear-gradient(
+      90deg,
+      var(--handbook-hero-base) 0%,
+      var(--handbook-hero-base) 70%,
+      rgb(22 25 31 / 97%) 82%,
+      rgb(22 25 31 / 88%) 100%
+    );
   }
 
   [data-md-color-scheme="slate"] .handbook-hero::before {
-    opacity: 0.09;
+    opacity: 0.5;
   }
 
   .handbook-home .handbook-hero h1 {
@@ -499,6 +546,21 @@
 }
 
 @media (forced-colors: active) {
+  .handbook-hero::before,
+  .handbook-hero::after {
+    display: none;
+  }
+
+  .handbook-hero__copy,
+  .handbook-hero__copy .handbook-eyebrow,
+  .handbook-hero__copy .handbook-hero__subtitle,
+  .handbook-hero__copy .handbook-hero__description,
+  .handbook-hero__copy .handbook-hero__caption,
+  .handbook-home .handbook-hero h1,
+  .handbook-home .handbook-hero__caption span:first-child {
+    color: CanvasText;
+  }
+
   .handbook-start {
     border: 1px solid CanvasText;
     border-left-width: 4px;
