@@ -114,14 +114,15 @@
   z-index: 2;
   min-width: 0;
   align-self: center;
-  color: var(--handbook-headline);
+  color: #F3F4F6;
+  padding-left: clamp(1rem, 2vw, 2rem);
 }
 
 .handbook-hero__copy .handbook-eyebrow,
 .handbook-hero__copy .handbook-hero__subtitle,
 .handbook-hero__copy .handbook-hero__description,
 .handbook-hero__copy .handbook-hero__caption {
-  color: var(--handbook-hero-muted);
+  color: #D1D5DB;
 }
 
 .handbook-eyebrow,
@@ -148,7 +149,7 @@
   position: relative;
   z-index: 2;
   margin: 0 0 1rem;
-  color: var(--handbook-headline);
+  color: #F3F4F6;
   font-size: clamp(2.25rem, 3vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.045em;
@@ -181,7 +182,7 @@
 }
 
 .handbook-hero__caption span:first-child {
-  color: var(--handbook-headline);
+  color: #B8BEC7;
   font-family: var(--md-code-font-family, monospace);
   font-size: 0.6875rem;
   font-weight: 600;
