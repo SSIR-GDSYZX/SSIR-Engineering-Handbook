@@ -1,0 +1,64 @@
+/* Documentation Microinteractions - SSIR Engineering Handbook */
+.handbook-section-link {
+  position: relative;
+  display: block;
+  padding: 4px 0;
+}
+
+.handbook-section-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--md-accent, #e8c439);
+  transition: width 150ms ease;
+}
+
+.handbook-section-link:hover::after,
+.handbook-section-link:focus::after {
+  width: 100%;
+}
+
+.handbook-section-link:active {
+  margin-bottom: -2px;
+  padding-bottom: 6px;
+}
+
+.handbook-section-link__number {
+  transition: color 150ms ease;
+}
+
+.handbook-section-link__number:hover,
+.handbook-section-link__number:focus {
+  color: var(--md-accent, #e8c439);
+}
+
+.handbook-document-header__button {
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.handbook-document-header__button:hover,
+.handbook-document-header__button:focus {
+  color: var(--md-accent, #e8c439);
+}
+
+.handbook-document-header__button:active {
+  transform: translateY(1px);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .handbook-section-link::after {
+    transition: none;
+  }
+  .handbook-section-link:hover::after,
+  .handbook-section-link:focus::after {
+    width: 100%;
+  }
+  .handbook-section-link__number,
+  .handbook-document-header__button {
+    transition: none;
+  }
+}

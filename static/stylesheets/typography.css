@@ -1,0 +1,219 @@
+/* Typography Microinteractions - SSIR Engineering Handbook */
+.handbook-hero__description,
+.handbook-hero__subtitle,
+.handbook-hero__caption,
+.handbook-index__text,
+.handbook-section-link__title,
+.handbook-section-link__description {
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.handbook-hero__description:hover,
+.handbook-hero__subtitle:hover,
+.handbook-hero__caption:hover,
+.handbook-index__text:hover,
+.handbook-section-link__title:hover,
+.handbook-section-link__description:hover {
+  color: var(--md-accent, #e8c439);
+}
+
+.handbook-section-link__title:focus,
+.handbook-section-link__description:focus {
+  outline: 1px solid var(--md-accent, #e8c439);
+  outline-offset: 2px;
+}
+
+.handbook-index__caption {
+  transition: color 150ms ease;
+}
+
+.handbook-index__caption:hover {
+  color: var(--md-accent, #e8c439);
+}
+
+/* Active section indicator */
+.handbook-sections > li > a.handbook-section-link.current {
+  color: var(--md-accent, #e8c439);
+}
+
+.handbook-sections > li > a.handbook-section-link.current::after {
+  content: "▸";
+  color: var(--md-accent, #e8c439);
+  margin-left: 4px;
+  font-size: 0.7em;
+}
+
+/* Activity Hub Styles */
+.handbook-activity-hub {
+  padding: 24px 0;
+  margin: 32px 0;
+  border-top: 1px solid var(--md-divider-color, #e0e0e0);
+  border-bottom: 1px solid var(--md-divider-color, #e0e0e0);
+}
+
+.handbook-activity-metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.handbook-activity-metric {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+.handbook-activity-metric-total {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--md-accent, #e8c439);
+  line-height: 1;
+}
+
+.handbook-activity-metric-label {
+  font-size: 0.85em;
+  color: var(--md-divider-color, #777777);
+  margin-top: 4px;
+}
+
+.handbook-activity-metric-new,
+.handbook-activity-metric-updated {
+  font-size: 1.2em;
+  color: var(--md-accent, #e8c439);
+  margin-left: 8px;
+}
+
+.handbook-activity-list {
+  margin-top: 24px;
+}
+
+.handbook-activity-entry {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--md-divider-color, #e0e0e0);
+  transition: background-color 150ms ease;
+}
+
+.handbook-activity-entry:hover {
+  background-color: rgba(232, 196, 57, 0.04);
+}
+
+.handbook-activity-entry:last-child {
+  border-bottom: none;
+}
+
+.handbook-activity-type {
+  display: inline-block;
+  padding: 2px 6px;
+  background-color: rgba(232, 196, 57, 0.1);
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: var(--md-accent, #e8c439);
+  margin-right: 12px;
+  white-space: nowrap;
+}
+
+.handbook-activity-title {
+  flex: 1;
+  color: var(--md-text-color, #212121);
+  font-size: 0.95em;
+  line-height: 1.4;
+  transition: color 150ms ease;
+}
+
+.handbook-activity-title:hover {
+  color: var(--md-accent, #e8c439);
+}
+
+.handbook-activity-section {
+  font-size: 0.75em;
+  color: var(--md-divider-color, #777777);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.handbook-activity-date {
+  font-size: 0.75em;
+  color: var(--md-divider-color, #777777);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.handbook-activity-unavailable {
+  padding: 20px;
+  text-align: center;
+  color: var(--md-divider-color, #777777);
+  font-style: italic;
+}
+
+.handbook-contribution-panel {
+  background-color: var(--md-code-background, #f5f5f5);
+  border-radius: 4px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.handbook-contribution-panel h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.2em;
+  color: var(--md-text-color, #212121);
+}
+
+.handbook-contribution-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.handbook-contribution-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--md-bg-color, #ffffff);
+  border: 1px solid var(--md-border-color, #e0e0e0);
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--md-text-color, #212121);
+  text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.handbook-contribution-link:hover,
+.handbook-contribution-link:focus {
+  background-color: var(--md-accent, #e8c439);
+  border-color: var(--md-accent, #e8c439);
+  color: var(--md-primary-color, #000000);
+}
+
+.handbook-contribution-link:active {
+  transform: translateY(1px);
+}
+
+.handbook-contribution-icon {
+  font-size: 0.8em;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .handbook-activity-entry {
+    transition: background-color 150ms ease;
+  }
+  .handbook-activity-title,
+  .handbook-contribution-link {
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+  .handbook-activity-entry:hover,
+  .handbook-contribution-link:hover,
+  .handbook-contribution-link:focus {
+    background-color: rgba(232, 196, 57, 0.04);
+    border-color: var(--md-accent, #e8c439);
+    color: var(--md-accent, #e8c439);
+  }
+}
