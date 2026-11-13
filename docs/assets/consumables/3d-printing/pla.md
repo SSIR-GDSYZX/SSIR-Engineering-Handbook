@@ -6,7 +6,9 @@ owner: SSIR
 last_reviewed: YYYY-MM-DD
 ---
 
-# PLA（聚乳酸）
+# PLA
+
+聚乳酸
 
 ## Material Overview（材料简介）
 
