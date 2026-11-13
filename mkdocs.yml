@@ -72,7 +72,9 @@ nav:
       - 机械设计: academy/mechanical-design/index.md
       - 电子技术: academy/electronics/index.md
       - 制造工艺: academy/manufacturing/index.md
-      - 机器人: academy/robotics/index.md
+      - 机器人:
+          - academy/robotics/index.md
+          - 第一次社课：Boids 群体行为模拟: academy/robotics/boids.md
   - 项目:
       - projects/index.md
       - 进行中: projects/active/index.md
