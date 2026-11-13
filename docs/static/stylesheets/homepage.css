@@ -135,7 +135,7 @@
   color: var(--handbook-muted);
   font-family: var(--md-code-font-family, monospace);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--handbook-weight-label);
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -151,7 +151,7 @@
   margin: 0 0 1rem;
   color: #F3F4F6;
   font-size: clamp(2.25rem, 3vw, 3.5rem);
-  font-weight: 800;
+  font-weight: var(--handbook-weight-hero);
   letter-spacing: -0.045em;
   line-height: 1.16;
 }
@@ -160,7 +160,7 @@
   margin-bottom: 0.75rem;
   color: var(--handbook-muted);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--handbook-weight-label);
   line-height: 1.5;
 }
 
@@ -185,7 +185,7 @@
   color: #B8BEC7;
   font-family: var(--md-code-font-family, monospace);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: var(--handbook-weight-label);
   letter-spacing: 0.08em;
 }
 
@@ -228,7 +228,7 @@
   margin-bottom: 0.75rem;
   color: var(--handbook-ink);
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-  font-weight: 700;
+  font-weight: var(--handbook-weight-heading-2);
   line-height: 1.25;
 }
 
@@ -251,7 +251,7 @@
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--handbook-line);
   color: var(--handbook-ink);
-  font-weight: 600;
+  font-weight: var(--handbook-weight-control);
   text-decoration: none;
   transition: background-color 200ms ease, color 200ms ease;
 }
@@ -338,7 +338,7 @@
   margin: 0;
   color: var(--handbook-ink);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 700;
+  font-weight: var(--handbook-weight-heading-2);
   line-height: 1.25;
 }
 
@@ -411,7 +411,7 @@
   color: var(--handbook-muted);
   font-family: var(--md-code-font-family, monospace);
   font-size: 0.6875rem;
-  font-weight: 600;
+  font-weight: var(--handbook-weight-label);
   letter-spacing: 0.08em;
   line-height: 1.4;
   overflow-wrap: anywhere;
@@ -420,7 +420,7 @@
 .handbook-section-link__title {
   color: var(--handbook-ink);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: var(--handbook-weight-strong);
   line-height: 1.35;
 }
 

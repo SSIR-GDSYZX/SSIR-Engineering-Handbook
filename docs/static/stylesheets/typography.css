@@ -1,0 +1,25 @@
+:root {
+  --handbook-font-family: var(--md-text-font), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC", sans-serif;
+  --handbook-weight-body: 400;
+  --handbook-weight-navigation: 500;
+  --handbook-weight-label: 600;
+  --handbook-weight-metadata: 500;
+  --handbook-weight-control: 600;
+  --handbook-weight-heading-1: 700;
+  --handbook-weight-category: 800;
+  --handbook-weight-heading-2: 600;
+  --handbook-weight-heading-3: 600;
+  --handbook-weight-hero: 800;
+  --handbook-weight-strong: 700;
+}
+
+body {
+  font-family: var(--handbook-font-family);
+  font-weight: var(--handbook-weight-body);
+}
+
+.md-nav__link,
+.md-tabs__link {
+  font-weight: var(--handbook-weight-navigation);
+}
