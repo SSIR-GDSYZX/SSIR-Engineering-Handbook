@@ -150,6 +150,34 @@ hide:
     </ol>
   </section>
 
+  <!-- Knowledge Activity Hub -->
+  <section class="handbook-activity-hub" aria-labelledby="handbook-activity-hub-title">
+    <div class="handbook-section-heading">
+      <p class="handbook-eyebrow"><span>活动</span><span> / CONTRIBUTION</span></p>
+      <h2 id="handbook-activity-hub-title">知识库动态</h2>
+      <p class="handbook-section-subtitle">RECENT UPDATES / CONTRIBUTION STATUS</p>
+    </div>
+
+    <div class="handbook-activity-metrics">
+      <div class="handbook-activity-metric">
+        <p class="handbook-activity-metric-total" id="total-articles">Loading...</p>
+        <p class="handbook-activity-metric-label">Total Articles</p>
+      </div>
+      <div class="handbook-activity-metric">
+        <p class="handbook-activity-metric-new" id="new-articles">Loading...</p>
+        <p class="handbook-activity-metric-label">New / Last 30 Days</p>
+      </div>
+      <div class="handbook-activity-metric">
+        <p class="handbook-activity-metric-updated" id="updated-articles">Loading...</p>
+        <p class="handbook-activity-metric-label">Updated / Last 30 Days</p>
+      </div>
+    </div>
+
+    <div class="handbook-activity-list" id="recent-activity-list">
+      <!-- Rendered by JavaScript -->
+    </div>
+  </section>
+
   <footer class="handbook-footer">
     <div>
       <p class="handbook-eyebrow"><span>02 / DOCUMENT STATUS</span></p>
@@ -162,5 +190,122 @@ hide:
       <a href="templates/">标准模板 <span aria-hidden="true">→</span></a>
       <a href="about/">关于本手册 <span aria-hidden="true">→</span></a>
     </div>
-  </footer>
+  </section>
+
+  <script>
+    // Knowledge Activity Hub data renderer
+    document.addEventListener('DOMContentLoaded', function() {
+      const activityDataPath = 'static/data/knowledge-activity.json';
+      const metrics = {
+        total: document.getElementById('total-articles'),
+        newArticles: document.getElementById('new-articles'),
+        updatedArticles: document.getElementById('updated-articles'),
+        list: document.getElementById('recent-activity-list')
+      };
+
+      function formatDate(dateString) {
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        if (isNaN(date)) return '';
+        const now = new Date();
+        const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+        if (diffDays < 0) return date.toLocaleDateString();
+        if (diffDays === 0) return '今天';
+        if (diffDays === 1) return '昨天';
+        if (diffDays < 7) return `${diffDays}天前`;
+        if (diffDays < 30) return `约${Math.ceil(diffDays / 7)}周前`;
+        return date.toLocaleDateString();
+      }
+
+      function renderActivity(data) {
+        if (!data || data.total_articles === undefined) {
+          metrics.total.textContent = '不可用';
+          return;
+        }
+
+        // Render metrics
+        metrics.total.textContent = data.total_articles;
+        metrics.newArticles.textContent = data.new_articles;
+        metrics.updatedArticles.textContent = data.updated_articles;
+
+        // Render recent activity list
+        const activityCandidates = data.recent_activity || [];
+        let html = '';
+
+        activityCandidates.slice(0, 5).forEach(function(entry) {
+          const date = formatDate(entry.date);
+          const activityType = entry.activity_type;
+          const title = entry.title;
+          const section = entry.section;
+          const path = entry.path;
+
+          // Generate GitHub Pages URL
+          const isOrg = section === 'organization';
+          const subpath = isOrg ? `organization/${path}` : `${section}/${path}`;
+          const githubUrl = `https://ssir-gdsyzx.github.io/SSIR-Engineering-Handbook/${subpath}/`;
+
+          let activityLabel;
+          if (entry.is_new && !entry.is_updated) {
+            activityLabel = '新增';
+          } else if (entry.is_updated) {
+            activityLabel = '更新';
+          } else {
+            activityLabel = '变更';
+          }
+
+          html += `
+            <div class="handbook-activity-entry">
+              <div class="handbook-activity-info">
+                <span class="handbook-activity-type">${activityLabel}</span>
+                <a class="handbook-activity-title" href="${githubUrl}" target="_blank" rel="noopener">
+                  ${title}
+                </a>
+                <span class="handbook-activity-section">${section}</span>
+              </div>
+              <span class="handbook-activity-date">${date}</span>
+            </div>
+          `;
+        });
+
+        if (html === '') {
+          html = '<p class="handbook-activity-unavailable">暂无活动记录</p>';
+        }
+
+        metrics.list.innerHTML = html;
+      }
+
+      // Fetch and render activity data
+      fetch(activityDataPath)
+        .then(function(response) {
+          if (!response.ok) throw new Error('Activity data unavailable');
+          return response.json();
+        })
+        .then(renderActivity)
+        .catch(function(error) {
+          console.warn('Activity data fetch error:', error);
+          metrics.total.textContent = '不可用';
+          metrics.newArticles.textContent = '—';
+          metrics.updatedArticles.textContent = '—';
+          metrics.list.innerHTML = '<p class="handbook-activity-unavailable">活动数据暂不可用</p>';
+        });
+    });
+  </script>
+</div>
+
+<div class="handbook-contribution-panel">
+  <h3>让知识持续生长</h3>
+  <div class="handbook-contribution-links">
+    <a href="organization/contribution-guide/" class="handbook-contribution-link">
+      <span class="handbook-contribution-icon">📖</span>
+      <span>文档贡献指南</span>
+    </a>
+    <a href="organization/document-editing-guide/" class="handbook-contribution-link">
+      <span class="handbook-contribution-icon">🛠️</span>
+      <span>浏览器编辑工作流</span>
+    </a>
+    <a href="https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook/issues/new?template=documentation-error.yml" class="handbook-contribution-link" target="_blank" rel="noopener">
+      <span class="handbook-contribution-icon">🐛</span>
+      <span>报告问题</span>
+    </a>
+  </div>
 </div>
