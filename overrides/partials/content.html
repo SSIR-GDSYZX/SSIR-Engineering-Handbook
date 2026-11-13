@@ -1,0 +1,56 @@
+{#-
+  Extends the Material content partial with a consistent document header.
+-#}
+{% include "partials/tags.html" %}
+{% if page.file.src_path == "index.md" %}
+  {% include "partials/actions.html" %}
+{% else %}
+  {% import "partials/path-item.html" as path_item with context %}
+  {% set status = page.meta.status | default("draft") | lower %}
+  {% set status_labels = {
+    "draft": "DRAFT",
+    "review": "IN REVIEW",
+    "approved": "APPROVED"
+  } %}
+  <header class="handbook-document-header{% if page.file.src_path != 'index.md' and page.file.src_path.endswith('index.md') %} handbook-document-header--landing{% endif %}">
+    <nav class="handbook-document-header__breadcrumb" aria-label="面包屑导航">
+      <ol>
+        {% if nav.homepage %}
+          {{ path_item.render(nav.homepage) }}
+        {% endif %}
+        {% for ancestor in page.ancestors | reverse %}
+          {{ path_item.render(ancestor) }}
+        {% endfor %}
+        <li aria-current="page">{{ page.title | d(config.site_name, true) }}</li>
+      </ol>
+    </nav>
+    <div class="handbook-document-header__top">
+      <div class="handbook-document-header__metadata">
+        <span class="handbook-document-header__category">{{ page.meta.category | default("General", true) | upper }}</span>
+        <span class="handbook-document-header__status">
+          <span>STATUS</span>
+          <strong>{{ status_labels.get(status, status | upper) }}</strong>
+        </span>
+      </div>
+      <div class="handbook-document-header__actions">
+        {% if page.edit_url %}
+          <a class="handbook-document-header__button" href="{{ page.edit_url }}" rel="edit" aria-label="在 GitHub 上编辑此文档">
+            <span class="md-icon" aria-hidden="true">{% include ".icons/material/pencil-outline.svg" %}</span>
+            <span>编辑此文档</span>
+          </a>
+        {% endif %}
+        <a class="handbook-document-header__button handbook-document-header__button--quiet" href="https://github.com/SSIR-GDSYZX/SSIR-Engineering-Handbook/issues/new?template=documentation-error.yml">
+          <span class="md-icon" aria-hidden="true">{% include ".icons/material/alert-circle-outline.svg" %}</span>
+          <span>报告问题</span>
+        </a>
+      </div>
+    </div>
+  </header>
+{% endif %}
+{% if "\u003ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true) }}</h1>
+{% endif %}
+{{ page.content }}
+{% include "partials/source-file.html" %}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

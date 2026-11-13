@@ -6,7 +6,9 @@ owner: SSIR
 last_reviewed: YYYY-MM-DD
 ---
 
-# PETG（聚对苯二甲酸乙二醇酯）
+# PETG
+
+聚对苯二甲酸乙二醇酯改性材料
 
 ## Material Overview（材料简介）
 
